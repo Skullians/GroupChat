@@ -1,4 +1,5 @@
-![groupicon](https://user-images.githubusercontent.com/60233722/106794815-f2978380-661e-11eb-90dd-129fcbcabc7a.jpeg) # GroupChat
+![](https://cdn.discordapp.com/attachments/671974562568601600/806601820033515560/Untitled_Artwork.png)
+# GroupChat
 
 A Minecraft plugin that introduces a group chat feature where players can chat with their friends.
 
