@@ -1,4 +1,4 @@
-![finalgroupicon](https://user-images.githubusercontent.com/60233722/106797951-ead9de00-6622-11eb-9179-a7bc2aeea186.PNG)
+![groupchaticon](https://user-images.githubusercontent.com/60233722/106799343-c1ba4d00-6624-11eb-8d96-d808f399ef2d.png)
 
 A Minecraft plugin that introduces a group chat feature where players can chat with their friends.
 
