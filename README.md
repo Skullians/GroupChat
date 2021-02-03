@@ -1,6 +1,4 @@
-![Webp net-resizeimage](https://user-images.githubusercontent.com/60233722/106796591-2ffd1080-6621-11eb-93e1-ea66a7fb3ebb.png)
-
-# GroupChat
+![Webp net-resizeimage (1)](https://user-images.githubusercontent.com/60233722/106796673-4b681b80-6621-11eb-9681-1a942f520559.png) # GroupChat
 
 A Minecraft plugin that introduces a group chat feature where players can chat with their friends.
 
