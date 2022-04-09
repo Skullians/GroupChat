@@ -2,7 +2,9 @@
 
 A Minecraft plugin that introduces a group chat feature where players can chat with their friends!
 
-# Message example
+# Showcase
+
+![information](https://user-images.githubusercontent.com/60233722/162554249-44ee6ae0-def2-4ad6-8e5e-f83a9caa588d.PNG)
 
 ![example](https://user-images.githubusercontent.com/60233722/162554207-bd0f873e-c830-474c-b000-bcdd800b4431.PNG)
 
