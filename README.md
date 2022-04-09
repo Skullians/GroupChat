@@ -1,10 +1,5 @@
 ![groupchaticon](https://user-images.githubusercontent.com/60233722/106799501-f4fcdc00-6624-11eb-925d-f7e7e557f452.png)
 
-
-<p align="center">
-  <img width="300" height="300" src=groupchaticon>
-</p>
-
 A Minecraft plugin that introduces a group chat feature where players can create groups which will allow them to talk privately amongst their group members!
 
 Upon creating a group, you become the group leader. A leader can promote other members to the rank of captain, which will allow them to invite and kick other players. There is no member limit to a group by default. 
