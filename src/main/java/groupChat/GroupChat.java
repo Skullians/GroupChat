@@ -34,7 +34,7 @@ public class GroupChat extends JavaPlugin implements CommandExecutor, TabComplet
         groupFile = new File(getDataFolder(), "groups.yml");
         groupYml = YamlConfiguration.loadConfiguration(groupFile);
 
-        buildGroupList();
+        rebuildGroupList(); // On startup, load group data from groups.yml into memory
 
         config = new ConfigHandler();
         inviteHandler = new InviteHandler(this);
@@ -86,17 +86,24 @@ public class GroupChat extends JavaPlugin implements CommandExecutor, TabComplet
         return subCommands;
     }
 
+    /**
+     * Save the YML and re-create group list
+     */
     public void save() {
         try {
             groupYml.save(groupFile);
             groupYml = YamlConfiguration.loadConfiguration(groupFile);
-            buildGroupList();
+            rebuildGroupList();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void buildGroupList() {
+    /**
+     * Re-create group data from yml
+     * This is called when saving (aka upon any group data change)
+     */
+    private void rebuildGroupList() {
         groups.clear();
 
         for (String key : groupYml.getKeys(false)) {
