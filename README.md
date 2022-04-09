@@ -16,3 +16,7 @@ Upon creating a group, you become the group leader. A leader can promote other m
 # In progress...
 
 Coming soon: Implementing customization through a configuration file; Will allow server admins to change the chat colors, the name of the captain rank, maxiumum members per group, etc.
+
+# License
+
+This plugin is licensed under the MIT License. For more information, please refer to LICENSE.
