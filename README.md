@@ -1,5 +1,8 @@
+![groupchaticon](https://user-images.githubusercontent.com/60233722/106799501-f4fcdc00-6624-11eb-925d-f7e7e557f452.png)
+
+
 <p align="center">
-  <img width="300" height="300" src="https://user-images.githubusercontent.com/60233722/106799501-f4fcdc00-6624-11eb-925d-f7e7e557f452.png">
+  <img width="300" height="300" src=groupchaticon>
 </p>
 
 A Minecraft plugin that introduces a group chat feature where players can create groups which will allow them to talk privately amongst their group members!
