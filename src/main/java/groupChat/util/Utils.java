@@ -1,4 +1,4 @@
-package util;
+package groupChat.util;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;

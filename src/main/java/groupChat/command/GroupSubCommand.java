@@ -1,5 +1,7 @@
-package group;
+package groupChat.command;
 
+import groupChat.GroupChat;
+import groupChat.util.GroupChatUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

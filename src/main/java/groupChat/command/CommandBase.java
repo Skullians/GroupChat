@@ -1,5 +1,8 @@
-package group;
+package groupChat.command;
 
+import groupChat.object.Group;
+import groupChat.GroupChat;
+import groupChat.util.GroupChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import util.Chat;
+import groupChat.util.Chat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,9 @@ public class CommandBase implements CommandExecutor, TabCompleter {
         this.plugin = plugin;
         this.utils = plugin.getUtils();
 
-        // Load command names
+        plugin.getCommand("group").setExecutor(this); // Register the command with Bukkit
+
+        // Load command names for auto completion
         plugin.getCommands().forEach(cmd -> subCmdNames.add(cmd.getName()));
     }
 

@@ -1,4 +1,4 @@
-package util;
+package groupChat.util;
 
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;

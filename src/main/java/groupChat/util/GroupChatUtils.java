@@ -1,11 +1,11 @@
-package group;
+package groupChat.util;
 
+import groupChat.object.Group;
+import groupChat.GroupChat;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import util.Chat;
-import util.ConfigHandler;
-import util.Lang;
-import util.Utils;
+import groupChat.config.ConfigHandler;
+import groupChat.config.Lang;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class GroupChatUtils {
 
     public boolean isValidName(String theName) {
         if (theName.length() < 4 || theName.length() > 16) return false;
-        return !Utils.chatInArray(theName, new String[]{"getThisFromConfig"});
+        return !Utils.chatInArray(theName, plugin.config().disallowedInName);
     }
 
     public List<String> getGroupNames() {
@@ -71,6 +71,7 @@ public class GroupChatUtils {
         return plugin.getConfig().getBoolean("groupChat." + p.getUniqueId());
     }
 
+    // todo: do this via OOP
     public void displayMenu(CommandSender p) {
         String bar = Chat.GRAY + Chat.bar(30) + Chat.RESET;
         String arrow = Chat.DARK_GRAY + "> " + Chat.AQUA;
