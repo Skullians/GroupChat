@@ -6,6 +6,7 @@ import groupChat.config.ConfigHandler;
 import groupChat.object.Group;
 import groupChat.object.InviteHandler;
 import groupChat.util.GroupChatUtils;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.ConfigurationSection;
@@ -56,6 +57,8 @@ public class GroupChat extends JavaPlugin implements CommandExecutor, TabComplet
         new GroupChatCommand(this); // The /g command
 
         new ChatListener(this);
+
+        new Metrics(this, 14893);
 
         getLogger().info("GroupChat v" + VERSION + " has loaded.");
     }
