@@ -17,19 +17,19 @@ public class KickMember extends GroupSubCommand {
     @Override
     public void execute(Player player, String[] args) {
         if (utils.getPlayerGroup(player.getUniqueId()) == null) {
-            utils.fail(player, "You are not in any group.");
+            utils.fail(player, "You are not in any party.");
             return;
         }
 
         Group group = utils.getPlayerGroup(player.getUniqueId());
 
         if (!group.isLeader(player.getUniqueId())) {
-            utils.fail(player, "Only the group leader can do that.");
+            utils.fail(player, "Only the party leader can do that.");
             return;
         }
 
         if (args.length == 1) {
-            utils.message(player, "Usage: /group kick <player>");
+            utils.message(player, "Usage: /party kick <player>");
             return;
         }
 
@@ -37,12 +37,12 @@ public class KickMember extends GroupSubCommand {
         OfflinePlayer toKick = Bukkit.getOfflinePlayer(args[1]);
 
         if (toKick.hasPlayedBefore() && !toKick.isOnline()) {
-            utils.fail(player, "That's not a valid group member.");
+            utils.fail(player, "That's not a valid party member.");
             return;
         }
 
         if (!group.getMembers().contains(toKick.getUniqueId())) {
-            utils.fail(player, "That player isn't a member of your group.");
+            utils.fail(player, "That player isn't a member of your party.");
             return;
         }
 
@@ -63,21 +63,21 @@ public class KickMember extends GroupSubCommand {
         }
 
         if (toKick.isOnline()) {
-            utils.message(((Player) toKick), "You have been kicked from the group.");
+            utils.message(((Player) toKick), "You have been kicked from the party.");
         }
 
         plugin.getYml().set(group.name() + ".members", list);
         plugin.save();
-        group.broadcast(toKick.getName() + " has been kicked from the group.");
+        group.broadcast(toKick.getName() + " has been kicked from the party.");
     }
 
     @Override
     public String description() {
-        return "Kick a player from the group.";
+        return "Kick a player from the party.";
     }
 
     @Override
     public String usage() {
-        return "/group kick <player>";
+        return "/party kick <player>";
     }
 }

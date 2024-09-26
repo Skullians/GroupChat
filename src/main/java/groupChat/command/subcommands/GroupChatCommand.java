@@ -19,7 +19,7 @@ public class GroupChatCommand implements CommandExecutor {
     public GroupChatCommand(GroupChat plugin) {
         this.plugin = plugin;
 
-        plugin.getCommand("g").setExecutor(this);
+        plugin.getCommand("p").setExecutor(this);
     }
 
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String commandLabel, String[] args) {

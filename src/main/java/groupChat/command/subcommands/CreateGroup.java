@@ -20,17 +20,17 @@ public class CreateGroup extends GroupSubCommand {
     @Override
     public void execute(Player player, String[] args) {
         if (utils.getPlayerGroup(player.getUniqueId()) != null) {
-            utils.fail(player, "You are already in a group.");
+            utils.fail(player, "You are already in a party.");
             return;
         }
 
         if (args.length == 1) {
-            utils.message(player, "Usage: /group create <name>");
+            utils.message(player, "Usage: /party create <name>");
             return;
         }
 
         if (!utils.isValidName(args[1])) {
-            utils.fail(player, "That's not a valid group name. (Minimum 4 characters, maximum 16)");
+            utils.fail(player, "That's not a valid party name. (Minimum 4 characters, maximum 16)");
             return;
         }
 
@@ -39,13 +39,13 @@ public class CreateGroup extends GroupSubCommand {
         ConfigurationSection theGroup = yml.getConfigurationSection(name);
 
         if (theGroup != null) {
-            utils.fail(player, "The group \"" + Chat.GRAY + name + Chat.RESET + "\" already exists.");
+            utils.fail(player, "The party \"" + Chat.GRAY + name + Chat.RESET + "\" already exists.");
             return;
         }
 
         if (args.length < 3) {
-            utils.message(player, "You are about to create the group \"" + Chat.RED + name + Chat.WHITE + "\"" + ".");
-            utils.message(player, "Are you sure? Type " + Chat.RED + "/group create <name> confirm " + Chat.WHITE + "to confirm.");
+            utils.message(player, "You are about to create the party \"" + Chat.RED + name + Chat.WHITE + "\"" + ".");
+            utils.message(player, "Are you sure? Type " + Chat.RED + "/party create <name> confirm " + Chat.WHITE + "to confirm.");
         } else if (args[2].equalsIgnoreCase("confirm")) {
             theGroup = yml.createSection(name);
 
@@ -55,7 +55,7 @@ public class CreateGroup extends GroupSubCommand {
             theGroup.set(".isGuild", false);
             theGroup.set(".pointBalance", 0.0);
 
-            utils.message(player, "You have created the group " + name + "! Type /group help for a list of commands.");
+            utils.message(player, "You have created the party " + name + "! Type /party help for a list of commands.");
             plugin.save();
         }
 
@@ -63,11 +63,11 @@ public class CreateGroup extends GroupSubCommand {
 
     @Override
     public String description() {
-        return "Create a new group";
+        return "Create a new party";
     }
 
     @Override
     public String usage() {
-        return "/group create <name>";
+        return "/party create <name>";
     }
 }

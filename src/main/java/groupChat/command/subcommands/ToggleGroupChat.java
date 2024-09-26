@@ -17,7 +17,7 @@ public class ToggleGroupChat extends GroupSubCommand {
     @Override
     public void execute(Player player, String[] args) {
         if (utils.getPlayerGroup(player.getUniqueId()) == null) {
-            utils.fail(player, "You are not a member of any group.");
+            utils.fail(player, "You are not a member of any party.");
             return;
         }
 
@@ -31,7 +31,7 @@ public class ToggleGroupChat extends GroupSubCommand {
         } else {
             config.set(path, true);
 
-            utils.message(player, "Default chat has been set to " + Chat.AQUA + "Group Chat" + Chat.RESET + ".");
+            utils.message(player, "Default chat has been set to " + Chat.AQUA + "Party Chat" + Chat.RESET + ".");
         }
 
         plugin.saveConfig();
@@ -44,6 +44,6 @@ public class ToggleGroupChat extends GroupSubCommand {
 
     @Override
     public String usage() {
-        return "/group togglechat";
+        return "/party togglechat";
     }
 }

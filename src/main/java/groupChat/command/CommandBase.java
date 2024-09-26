@@ -28,7 +28,7 @@ public class CommandBase implements CommandExecutor, TabCompleter {
         this.plugin = plugin;
         this.utils = plugin.getUtils();
 
-        plugin.getCommand("group").setExecutor(this); // Register the command with Bukkit
+        plugin.getCommand("party").setExecutor(this); // Register the command with Bukkit
 
         // Load command names for auto completion
         plugin.getCommands().forEach(cmd -> subCmdNames.add(cmd.getName()));

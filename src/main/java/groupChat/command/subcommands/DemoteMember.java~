@@ -17,19 +17,19 @@ public class DemoteMember extends GroupSubCommand {
     @Override
     public void execute(Player player, String[] args) {
         if (utils.getPlayerGroup(player.getUniqueId()) == null) {
-            utils.fail(player, "You are not a member of any party.");
+            utils.fail(player, "You are not a member of any group.");
             return;
         }
 
         Group group = utils.getPlayerGroup(player.getUniqueId());
 
         if (!group.getLeader().equals(player.getUniqueId())) {
-            utils.fail(player, "Only the party leader can do that.");
+            utils.fail(player, "Only the group leader can do that.");
             return;
         }
 
         if (args.length == 1) {
-            utils.message(player, "Usage: /party demote <" + Lang.TRUSTED_RANK + ">");
+            utils.message(player, "Usage: /group demote <" + Lang.TRUSTED_RANK + ">");
             return;
         }
 
@@ -59,6 +59,6 @@ public class DemoteMember extends GroupSubCommand {
 
     @Override
     public String usage() {
-        return "/party demote <player>";
+        return "/group demote <player>";
     }
 }

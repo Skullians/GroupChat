@@ -78,20 +78,19 @@ public class GroupChatUtils {
         String desc = Chat.WHITE + "- ";
         String command = Chat.WHITE + "";
         String arg = Chat.GRAY + "";
-        p.sendMessage(bar + Chat.AQUA + " [Group Help] " + bar);
-        p.sendMessage(arrow + "/group " + command + "create" + arg + " <name> " + desc + "Create a group for "
-                + ConfigHandler.COST_STRING + " points");
-        p.sendMessage(arrow + "/group " + command + "leave " + arg + "<player> " + desc + "Leave your current group");
-        p.sendMessage(arrow + "/group " + command + "invite " + arg + "<player> " + desc
-                + "Invite a player to join your group");
+        p.sendMessage(bar + Chat.AQUA + " [Party Help] " + bar);
+        p.sendMessage(arrow + "/party " + command + "create" + arg + " <name> " + desc + "Create a party for your friends.");
+        p.sendMessage(arrow + "/party " + command + "leave " + arg + "<player> " + desc + "Leave your current party");
+        p.sendMessage(arrow + "/party " + command + "invite " + arg + "<player> " + desc
+                + "Invite a player to join your party");
         p.sendMessage(
-                arrow + "/group " + command + "kick " + arg + "<player> " + desc + "Remove a player from your group");
-        p.sendMessage(arrow + "/group " + command + "disband " + arg + "<name> " + desc + "Disband your group");
+                arrow + "/party " + command + "kick " + arg + "<player> " + desc + "Remove a player from your party");
+        p.sendMessage(arrow + "/group " + command + "disband " + arg + "<name> " + desc + "Disband your party");
         p.sendMessage(
-                arrow + "/group " + command + "promote " + arg + "<player> " + desc + "Promote a member to captain");
+                arrow + "/party " + command + "promote " + arg + "<player> " + desc + "Promote a member to captain");
         p.sendMessage(
-                arrow + "/group " + command + "togglechat " + desc + "Toggle default chat between group and public");
-        p.sendMessage(arrow + "/g " + command + arg + "<message> " + desc + "Send a message to your group");
+                arrow + "/party " + command + "togglechat " + desc + "Toggle default chat between party and public");
+        p.sendMessage(arrow + "/p " + command + arg + "<message> " + desc + "Send a message to your party");
     }
 
 }

@@ -34,6 +34,6 @@ public class InviteDecline extends GroupSubCommand {
 
     @Override
     public String usage() {
-        return "/group decline";
+        return "/party decline";
     }
 }

@@ -1,14 +1,14 @@
 main: groupChat.GroupChat
 name: GroupChat
-version: ${project.version}
+version: 2.0.1-1.21.1
 description: GroupChat - Chat with your friends!
-api-version: 1.18
-Author: _NickVo
+api-version: 1.21
+Author: [Skullians, _NickVo]
 
 commands:
-  group:
+  party:
     description: Primary command for the plugin
-  g:
-    description: Speak within a group
+  p:
+    description: Speak within a party
   confirm:
     description: Confirmation command for the plugin

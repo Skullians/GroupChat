@@ -39,13 +39,13 @@ public class InviteAccept extends GroupSubCommand {
         utils.message(player, "Please wait...");
 
         Bukkit.getScheduler().runTaskLater(plugin, () ->
-                utils.message(player, "You have joined the group" + group.name() + "!"), 80);
+                utils.message(player, "You have joined the party" + group.name() + "!"), 80);
 
         Bukkit.getScheduler().runTaskLater(plugin, () ->
                 utils.message(player, "Hint: " + Chat.GRAY
-                        + "Type /g <message> to talk within your group."), 240);
+                        + "Type /party <message> to talk within your party."), 240);
 
-        group.broadcast(player.getName() + " has joined the group!");
+        group.broadcast(player.getName() + " has joined the party!");
     }
 
     @Override
@@ -55,6 +55,6 @@ public class InviteAccept extends GroupSubCommand {
 
     @Override
     public String usage() {
-        return "/group accept";
+        return "/party accept";
     }
 }

@@ -18,19 +18,19 @@ public class PromoteMember extends GroupSubCommand {
 	@Override
 	public void execute(Player player, String[] args) {
 		if (utils.getPlayerGroup(player.getUniqueId()) == null) {
-			utils.message(player, "You are not in a group.");
+			utils.message(player, "You are not in a party.");
 			return;
 		}
 
 		Group group = utils.getPlayerGroup(player.getUniqueId());
 
 		if (!group.isLeader(player.getUniqueId())) {
-			utils.fail(player, "Only the group leader can do that.");
+			utils.fail(player, "Only the party leader can do that.");
 			return;
 		}
 
 		if (args.length == 1) {
-			utils.message(player, "Usage: /group promote <player>");
+			utils.message(player, "Usage: /party promote <player>");
 			return;
 		}
 
@@ -43,18 +43,18 @@ public class PromoteMember extends GroupSubCommand {
 		}
 
 		if (!group.getMembers().contains(target.getUniqueId())) {
-			utils.message(player, target.getName() + " is not a member of your group.");
+			utils.message(player, target.getName() + " is not a member of your party.");
 			return;
 		}
 
 		if (group.isGroupStaff(target.getUniqueId())) {
-			utils.message(player, "You cannot promote that group member any further.");
+			utils.message(player, "You cannot promote that party member any further.");
 			return;
 		}
 
 		List<String> list = plugin.getYml().getStringList(group.name() + ".captains");
 		list.add(target.getUniqueId().toString());
-		group.broadcast(target.getName() + " has been promoted to group " + Lang.TRUSTED_RANK + " by "
+		group.broadcast(target.getName() + " has been promoted to party " + Lang.TRUSTED_RANK + " by "
 				+ player.getName() + ".");
 		plugin.getYml().set(group.name() + ".captains", list);
 		plugin.save();
@@ -67,6 +67,6 @@ public class PromoteMember extends GroupSubCommand {
 
 	@Override
 	public String usage() {
-		return "/group promote <player>";
+		return "/party promote <player>";
 	}
 }
